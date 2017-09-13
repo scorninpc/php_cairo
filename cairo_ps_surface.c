@@ -379,7 +379,7 @@ PHP_FUNCTION(cairo_ps_level_to_string)
 	}
 	
 	if (level_str = cairo_ps_level_to_string(level)) {
-		RETURN_STRING(level_str, 1);
+		RETURN_STRING(level_str);
 	}
 	
 	RETURN_FALSE;
@@ -399,7 +399,7 @@ PHP_METHOD(CairoPsSurface, levelToString)
 	}
 	PHP_CAIRO_RESTORE_ERRORS(TRUE)
 
-	RETURN_STRING(cairo_ps_level_to_string(level), 1);
+	RETURN_STRING(cairo_ps_level_to_string(level));
 }
 /* }}} */
 #endif

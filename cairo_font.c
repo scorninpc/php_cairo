@@ -104,7 +104,7 @@ PHP_FUNCTION(cairo_toy_font_face_get_family)
 	PHP_CAIRO_RESTORE_ERRORS(FALSE)
 
 	font_face_object = (cairo_font_face_object *) cairo_font_face_object_get(toy_font_face_zval TSRMLS_CC);
-	RETURN_STRING(cairo_toy_font_face_get_family(font_face_object->font_face), 1);
+	RETURN_STRING(cairo_toy_font_face_get_family(font_face_object->font_face));
 }
 /* }}} */
 

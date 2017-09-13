@@ -663,7 +663,7 @@ PHP_FUNCTION(cairo_version_string)
 		return;
 	}
 
-	RETURN_STRING(cairo_version_string(), 1);
+	RETURN_STRING(cairo_version_string());
 }
 /* }}} */
 
@@ -678,7 +678,7 @@ PHP_METHOD(Cairo, versionString)
 	}
 	PHP_CAIRO_RESTORE_ERRORS(TRUE)
 
-	RETURN_STRING(cairo_version_string(), 1);
+	RETURN_STRING(cairo_version_string());
 }
 /* }}} */
 
@@ -817,7 +817,7 @@ PHP_FUNCTION(cairo_status_to_string)
 		return;
 	}
 
-	RETURN_STRING(cairo_status_to_string(status), 1);
+	RETURN_STRING(cairo_status_to_string(status));
 }
 /* }}} cairo_status_to_string */
 
@@ -835,7 +835,7 @@ PHP_METHOD(Cairo, statusToString)
 	}
 	PHP_CAIRO_RESTORE_ERRORS(TRUE)
 
-	RETURN_STRING(cairo_status_to_string(status), 1);
+	RETURN_STRING(cairo_status_to_string(status));
 }
 /* }}} */
 

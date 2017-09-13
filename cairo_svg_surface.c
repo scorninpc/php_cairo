@@ -181,7 +181,7 @@ PHP_FUNCTION(cairo_svg_version_to_string)
 	}
 	
 	if (version_str = cairo_svg_version_to_string(version)) {
-		RETURN_STRING(version_str, 1);
+		RETURN_STRING(version_str);
 	}
 	RETURN_FALSE;
 }
@@ -200,7 +200,7 @@ PHP_METHOD(CairoSvgSurface, versionToString)
 	}
 	PHP_CAIRO_RESTORE_ERRORS(TRUE)
 
-	RETURN_STRING(cairo_svg_version_to_string(version), 1);
+	RETURN_STRING(cairo_svg_version_to_string(version));
 }
 /* }}} */
 
