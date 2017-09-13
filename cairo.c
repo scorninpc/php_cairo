@@ -691,27 +691,27 @@ PHP_FUNCTION(cairo_available_surfaces)
 	}
 
 	array_init(return_value);
-	add_next_index_string(return_value,"IMAGE",1);
+	add_next_index_string(return_value,"IMAGE");
 #ifdef CAIRO_HAS_PNG_FUNCTIONS
-	add_next_index_string(return_value,"PNG",1);
+	add_next_index_string(return_value,"PNG");
 #endif
 #ifdef CAIRO_HAS_PDF_SURFACE
-	add_next_index_string(return_value,"PDF",1);
+	add_next_index_string(return_value,"PDF");
 #endif
 #ifdef CAIRO_HAS_PS_SURFACE
-	add_next_index_string(return_value,"PS",1);
+	add_next_index_string(return_value,"PS");
 #endif
 #ifdef CAIRO_HAS_SVG_SURFACE
-	add_next_index_string(return_value,"SVG",1);
+	add_next_index_string(return_value,"SVG");
 #endif
 #ifdef CAIRO_HAS_XLIB_SURFACE
-	add_next_index_string(return_value,"XLIB",1);
+	add_next_index_string(return_value,"XLIB");
 #endif
 #ifdef CAIRO_HAS_QUARTZ_SURFACE
-	add_next_index_string(return_value,"QUARTZ",1);
+	add_next_index_string(return_value,"QUARTZ");
 #endif
 #ifdef CAIRO_HAS_WIN32_SURFACE
-	add_next_index_string(return_value,"WIN32",1);
+	add_next_index_string(return_value,"WIN32");
 #endif
 }
 /* }}} */
@@ -728,30 +728,30 @@ PHP_METHOD(Cairo, availableSurfaces)
 	PHP_CAIRO_RESTORE_ERRORS(TRUE)
 
 	array_init(return_value);
-	add_next_index_string(return_value,"IMAGE",1);
+	add_next_index_string(return_value,"IMAGE");
 #ifdef CAIRO_HAS_PNG_FUNCTIONS
-	add_next_index_string(return_value,"PNG",1);
+	add_next_index_string(return_value,"PNG");
 #endif
 #ifdef CAIRO_HAS_PDF_SURFACE
-	add_next_index_string(return_value,"PDF",1);
+	add_next_index_string(return_value,"PDF");
 #endif
 #ifdef CAIRO_HAS_PS_SURFACE
-	add_next_index_string(return_value,"PS",1);
+	add_next_index_string(return_value,"PS");
 #endif
 #ifdef CAIRO_HAS_SVG_SURFACE
-	add_next_index_string(return_value,"SVG",1);
+	add_next_index_string(return_value,"SVG");
 #endif
 #ifdef CAIRO_HAS_XLIB_SURFACE
-	add_next_index_string(return_value,"XLIB",1);
+	add_next_index_string(return_value,"XLIB");
 #endif
 #ifdef CAIRO_HAS_QUARTZ_SURFACE
-	add_next_index_string(return_value,"QUARTZ",1);
+	add_next_index_string(return_value,"QUARTZ");
 #endif
 #ifdef CAIRO_HAS_WIN32_SURFACE
-	add_next_index_string(return_value,"WIN32",1);
+	add_next_index_string(return_value,"WIN32");
 #endif
 #ifdef CAIRO_HAS_RECORDING_SURFACE
-	add_next_index_string(return_value,"RECORDING",1);
+	add_next_index_string(return_value,"RECORDING");
 #endif
 }
 /* }}} */
@@ -766,16 +766,16 @@ PHP_FUNCTION(cairo_available_fonts)
 
 	array_init(return_value);
 #if defined(CAIRO_HAS_FT_FONT) && defined(HAVE_FREETYPE)
-	add_next_index_string(return_value,"FREETYPE",1);
+	add_next_index_string(return_value,"FREETYPE");
 #endif
 #ifdef CAIRO_HAS_QUARTZ_FONT
-	add_next_index_string(return_value,"QUARTZ",1);
+	add_next_index_string(return_value,"QUARTZ");
 #endif
 #ifdef CAIRO_HAS_WIN32_FONT
-	add_next_index_string(return_value,"WIN32",1);
+	add_next_index_string(return_value,"WIN32");
 #endif
 #ifdef CAIRO_HAS_USER_FONT
-	add_next_index_string(return_value,"USER",1);
+	add_next_index_string(return_value,"USER");
 #endif
 }
 /* }}} */
@@ -793,16 +793,16 @@ PHP_METHOD(Cairo, availableFonts)
 
 	array_init(return_value);
 #if defined(CAIRO_HAS_FT_FONT) && defined(HAVE_FREETYPE)
-	add_next_index_string(return_value,"FREETYPE",1);
+	add_next_index_string(return_value,"FREETYPE");
 #endif
 #ifdef CAIRO_HAS_QUARTZ_FONT
-	add_next_index_string(return_value,"QUARTZ",1);
+	add_next_index_string(return_value,"QUARTZ");
 #endif
 #ifdef CAIRO_HAS_WIN32_FONT
-	add_next_index_string(return_value,"WIN32",1);
+	add_next_index_string(return_value,"WIN32");
 #endif
 #ifdef CAIRO_HAS_USER_FONT
-	add_next_index_string(return_value,"USER",1);
+	add_next_index_string(return_value,"USER");
 #endif
 }
 /* }}} */
