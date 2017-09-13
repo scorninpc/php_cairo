@@ -352,7 +352,7 @@ PHP_MINIT_FUNCTION(cairo_ft_font)
 	zend_class_entry ftfont_ce;
 
 	INIT_CLASS_ENTRY(ftfont_ce, "CairoFtFontFace", cairo_ft_font_methods);
-	cairo_ce_cairoftfont = zend_register_internal_class_ex(&ftfont_ce, cairo_ce_cairofontface, "CairoFontFace" TSRMLS_CC);
+	cairo_ce_cairoftfont = zend_register_internal_class_ex(&ftfont_ce, cairo_ce_cairofontface);
 	cairo_ce_cairoftfont->create_object = cairo_ft_font_face_object_new;
 
 	return SUCCESS;

@@ -342,7 +342,7 @@ PHP_MINIT_FUNCTION(cairo_win32_font)
 
     INIT_CLASS_ENTRY(ce, "CairoWin32FontFace", cairo_win32_font_methods);
     cairo_ce_cairowin32font = zend_register_internal_class_ex(
-        &ce, cairo_ce_cairofontface, "CairoFontFace" TSRMLS_CC);
+        &ce, cairo_ce_cairofontface);
     /** So Zend knows what function to call when a new CairoWin32FontFace
         is requested */
     cairo_ce_cairowin32font->create_object = cairo_win32_font_face_create_new;

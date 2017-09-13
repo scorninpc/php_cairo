@@ -127,7 +127,7 @@ const zend_function_entry cairo_quartz_font_methods[] = {
 
 #ifdef CAIRO_HAS_QUARTZ_FONT
 	INIT_CLASS_ENTRY(ce, "CairoQuartzFontFace", cairo_quartz_font_methods);
-	cairo_ce_cairoquartzfont = zend_register_internal_class_ex(&ce, cairo_ce_cairofontface, "CairoFontFace" TSRMLS_CC);
+	cairo_ce_cairoquartzfont = zend_register_internal_class_ex(&ce, cairo_ce_cairofontface);
 	cairo_ce_cairoquartzfont->create_object = cairo_fontface_object_new;
 
 	INIT_CLASS_ENTRY(ce, "CairoQuartzAtsuFontNameCode", NULL);

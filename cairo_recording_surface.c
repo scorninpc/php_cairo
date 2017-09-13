@@ -150,7 +150,7 @@ PHP_MINIT_FUNCTION(cairo_recording_surface)
 	zend_class_entry ce;
 
 	INIT_CLASS_ENTRY(ce, "CairoRecordingSurface", cairo_recording_surface_methods);
-	cairo_ce_cairorecordingsurface = zend_register_internal_class_ex(&ce, cairo_ce_cairosurface, "CairoSurface" TSRMLS_CC);
+	cairo_ce_cairorecordingsurface = zend_register_internal_class_ex(&ce, cairo_ce_cairosurface);
 	cairo_ce_cairorecordingsurface->create_object = cairo_surface_object_new;
 
 	return SUCCESS;

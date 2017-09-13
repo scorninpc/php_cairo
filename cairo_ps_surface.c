@@ -429,7 +429,7 @@ PHP_MINIT_FUNCTION(cairo_ps_surface)
 	zend_class_entry pslevel_ce;
 
 	INIT_CLASS_ENTRY(pssurface_ce, "CairoPsSurface", cairo_ps_surface_methods);
-	cairo_ce_cairopssurface = zend_register_internal_class_ex(&pssurface_ce, cairo_ce_cairosurface, "CairoSurface" TSRMLS_CC);
+	cairo_ce_cairopssurface = zend_register_internal_class_ex(&pssurface_ce, cairo_ce_cairosurface);
 	cairo_ce_cairopssurface->create_object = cairo_surface_object_new;
 
 	INIT_CLASS_ENTRY(pslevel_ce, "CairoPsLevel", NULL);

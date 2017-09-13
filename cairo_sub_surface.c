@@ -51,7 +51,7 @@ PHP_MINIT_FUNCTION(cairo_sub_surface)
 	zend_class_entry ce;
 
 	INIT_CLASS_ENTRY(ce, "CairoSubSurface", cairo_sub_surface_methods);
-	cairo_ce_cairosubsurface = zend_register_internal_class_ex(&ce, cairo_ce_cairosurface, "CairoSurface" TSRMLS_CC);
+	cairo_ce_cairosubsurface = zend_register_internal_class_ex(&ce, cairo_ce_cairosurface);
 	cairo_ce_cairosubsurface->create_object = cairo_surface_object_new;
 
 	return SUCCESS;
