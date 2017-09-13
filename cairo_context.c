@@ -694,7 +694,7 @@ PHP_FUNCTION(cairo_set_dash)
 
 	/* iterate the array, make sure we JUGGLE the value to a double */
 	for(zend_hash_internal_pointer_reset(dashes_hash); zend_hash_has_more_elements(dashes_hash) == SUCCESS; zend_hash_move_forward(dashes_hash)) { 
-		if (zend_hash_get_current_data((void **)&ppzval) == FAILURE) {
+		if (zend_hash_get_current_data(dashes_hash) == FAILURE) {
 			continue; 
 		}
 
@@ -2200,7 +2200,7 @@ PHP_FUNCTION(cairo_glyph_path)
 
 	/* iterate the array, each value inside MUST be an instance of CairoGlyph */
 	for(zend_hash_internal_pointer_reset(glyphs_hash); zend_hash_has_more_elements(glyphs_hash) == SUCCESS; zend_hash_move_forward(glyphs_hash)) { 
-		if (zend_hash_get_current_data((void **)&ppzval) == FAILURE) {
+		if (zend_hash_get_current_data(glyphs_hash) == FAILURE) {
 			continue; 
 		}
 
