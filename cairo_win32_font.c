@@ -294,7 +294,7 @@ zend_object cairo_win32_font_face_create_new(zend_class_entry *ce TSRMLS_DC)
 #endif
     retval.handle = zend_objects_store_put(
         font_face, NULL, 
-        (zend_objects_free_object_storage_t)cairo_win32_font_face_object_destroy, 
+        (zend_object_handlers)cairo_win32_font_face_object_destroy, 
         NULL TSRMLS_CC
     );
     retval.handlers = &cairo_win32_font_face_object_handlers;

@@ -2995,7 +2995,7 @@ static zend_object cairo_context_object_new(zend_class_entry *ce TSRMLS_DC)
 #else
 	object_properties_init(&context->std, ce);
 #endif
-	retval.handle = zend_objects_store_put(context, NULL, (zend_objects_free_object_storage_t)cairo_context_object_destroy, NULL TSRMLS_CC);
+	retval.handle = zend_objects_store_put(context, NULL, (zend_object_handlers)cairo_context_object_destroy, NULL TSRMLS_CC);
 	retval.handlers = &cairo_std_object_handlers;
 	return retval;
 }

@@ -59,7 +59,7 @@ static zend_object cairo_path_object_new(zend_class_entry *ce TSRMLS_DC)
 #else
 	object_properties_init(&path->std, ce);
 #endif
-	retval.handle = zend_objects_store_put(path, NULL, (zend_objects_free_object_storage_t)cairo_path_object_destroy, NULL TSRMLS_CC);
+	retval.handle = zend_objects_store_put(path, NULL, (zend_object_handlers)cairo_path_object_destroy, NULL TSRMLS_CC);
 	retval.handlers = &cairo_std_object_handlers;
 	return retval;
 }

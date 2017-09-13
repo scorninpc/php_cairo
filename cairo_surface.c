@@ -615,7 +615,7 @@ zend_object cairo_surface_object_new(zend_class_entry *ce TSRMLS_DC)
 #else
 	object_properties_init(&surface->std, ce);
 #endif
-	retval.handle = zend_objects_store_put(surface, NULL, (zend_objects_free_object_storage_t)cairo_surface_object_destroy, NULL TSRMLS_CC);
+	retval.handle = zend_objects_store_put(surface, NULL, (zend_object_handlers)cairo_surface_object_destroy, NULL TSRMLS_CC);
 	retval.handlers = zend_get_std_object_handlers();
 	return retval;
 }
