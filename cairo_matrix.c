@@ -537,7 +537,6 @@ static zend_object cairo_matrix_object_new(zend_class_entry *ce TSRMLS_DC)
 #else
 	object_properties_init(&matrix->std, ce);
 #endif
-	retval.handle = zend_objects_store_put(matrix, NULL, cairo_matrix_object_destroy, NULL TSRMLS_CC);
 	retval.handlers = &cairo_matrix_object_handlers;
 	return retval;
 }

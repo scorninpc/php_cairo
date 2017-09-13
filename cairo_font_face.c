@@ -129,7 +129,6 @@ zend_object cairo_font_face_object_new(zend_class_entry *ce TSRMLS_DC)
 #else
 	object_properties_init(&font_face->std, ce);
 #endif
-	retval.handle = zend_objects_store_put(font_face, NULL, cairo_font_face_object_destroy, NULL TSRMLS_CC);
 	retval.handlers = zend_get_std_object_handlers();
 	return retval;
 }
