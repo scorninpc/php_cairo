@@ -25,6 +25,8 @@
 
 #define PHP_CAIRO_VERSION "0.3.2-beta"
 
+#define ZEND_ACC_FINAL_CLASS                0x40
+
 extern zend_module_entry cairo_module_entry;
 #define phpext_cairo_ptr &cairo_module_entry
 

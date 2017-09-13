@@ -170,7 +170,7 @@ PHP_MINIT_FUNCTION(cairo_font)
 	zend_class_entry fontweight_ce;
 
 	INIT_CLASS_ENTRY(toyfont_ce, "CairoToyFontFace", cairo_toy_font_face_methods);
-	cairo_ce_cairotoyfontface = zend_register_internal_class_ex(&toyfont_ce, cairo_ce_cairofontface, "CairoFontFace" TSRMLS_CC);
+	cairo_ce_cairotoyfontface = zend_register_internal_class_ex(&toyfont_ce, cairo_ce_cairofontface);
 	cairo_ce_cairotoyfontface->create_object = cairo_font_face_object_new;
 
     INIT_CLASS_ENTRY(fontslant_ce, "CairoFontSlant", NULL);

@@ -37,7 +37,7 @@ PHP_MINIT_FUNCTION(cairo_error)
 	zend_class_entry ce, status_ce;
 
 	INIT_CLASS_ENTRY(ce, "CairoException", NULL);
-	cairo_ce_cairoexception = zend_register_internal_class_ex(&ce, zend_exception_get_default(TSRMLS_C), "Exception" TSRMLS_CC);
+	cairo_ce_cairoexception = zend_register_internal_class_ex(&ce, zend_exception_get_default(TSRMLS_C));
 
 	INIT_CLASS_ENTRY(status_ce, "CairoStatus", NULL);
 	cairo_ce_cairostatus = zend_register_internal_class(&status_ce TSRMLS_CC);
