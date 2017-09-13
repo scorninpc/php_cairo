@@ -27,6 +27,10 @@
 
 #define ZEND_ACC_FINAL_CLASS                0x40
 
+#ifndef ENFORCE_SAFE_MODE
+# define ENFORCE_SAFE_MODE 0
+#endif
+
 extern zend_module_entry cairo_module_entry;
 #define phpext_cairo_ptr &cairo_module_entry
 

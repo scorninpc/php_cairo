@@ -500,8 +500,6 @@ static zend_object cairo_matrix_object_clone(zval *this_ptr TSRMLS_DC)
 	new_zend_object = cairo_matrix_object_new(old_matrix->std.ce TSRMLS_CC);
 	new_matrix = (cairo_matrix_object *)zend_object_store_get_object(this_ptr TSRMLS_CC);
 
-	zend_objects_clone_members(&new_matrix->std, new_zend_object, &old_matrix->std, Z_OBJ_HANDLE_P(this_ptr) TSRMLS_CC);
-
 	cairo_matrix_init(new_matrix->matrix, old_matrix->matrix->xx, old_matrix->matrix->yx, old_matrix->matrix->xy,
 		old_matrix->matrix->yy, old_matrix->matrix->x0, old_matrix->matrix->y0);
 
