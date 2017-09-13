@@ -40,7 +40,7 @@ ZEND_END_ARG_INFO()
 static double php_cairo_get_double_from_array(zval *val, const char *name) {
 	zval **tmp;
 
-	if (zend_hash_find(Z_ARRVAL_P(val), name, strlen(name) + 1, (void **)&tmp) == SUCCESS) {
+	if (zend_hash_find(Z_ARRVAL_P(val), name) == SUCCESS) {
 		if (Z_TYPE_PP(tmp) != IS_DOUBLE) {
 			convert_to_double(*tmp);
 		} 

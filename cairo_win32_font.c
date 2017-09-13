@@ -56,7 +56,7 @@
 		REGISTER_LONG_CONSTANT(const_name_p, const_value, CONST_CS | CONST_PERSISTENT);
 
 #define LFONT_FIND_LONG(name, defaultval) \
-    if (zend_hash_find(Z_ARRVAL_P(font_options), #name, sizeof(#name), (void **)&tmp) == SUCCESS) { \
+    if (zend_hash_find(Z_ARRVAL_P(font_options), #name) == SUCCESS) { \
         if (Z_TYPE_PP(tmp) != IS_LONG) \
             zend_error(E_WARNING, "cairo_win32_font_face_create() expects key '"#name"' to be of type long"); \
         else \
@@ -67,7 +67,7 @@
         
 /** Same as before but casts return to BYTE */
 #define LFONT_FIND_LONGB(name, defaultval) \
-    if (zend_hash_find(Z_ARRVAL_P(font_options), #name, sizeof(#name), (void **)&tmp) == SUCCESS) { \
+    if (zend_hash_find(Z_ARRVAL_P(font_options), #name) == SUCCESS) { \
         if (Z_TYPE_PP(tmp) != IS_LONG) \
             zend_error(E_WARNING, "cairo_win32_font_face_create() expects key '"#name"' to be of type long"); \
         else \
@@ -77,7 +77,7 @@
         lfont.##name = (BYTE)defaultval;
             
 #define LFONT_FIND_BOOL(name, defaultval) \
-    if (zend_hash_find(Z_ARRVAL_P(font_options), #name, sizeof(#name), (void **)&tmp) == SUCCESS) { \
+    if (zend_hash_find(Z_ARRVAL_P(font_options), #name) == SUCCESS) { \
         if (Z_TYPE_PP(tmp) != IS_BOOL) \
             zend_error(E_WARNING, "cairo_win32_font_face_create() expects key '"#name"' to be of type bool"); \
         else \
@@ -140,7 +140,7 @@ PHP_FUNCTION(cairo_win32_font_face_create)
         LFONT_FIND_LONGB(lfQuality, DEFAULT_QUALITY);
         LFONT_FIND_LONGB(lfPitchAndFamily, FIXED_PITCH | FF_DONTCARE);
         
-        if (zend_hash_find(Z_ARRVAL_P(font_options), "lfFaceName", sizeof("lfFaceName"), (void **)&tmp) == SUCCESS) {
+        if (zend_hash_find(Z_ARRVAL_P(font_options), "lfFaceName") == SUCCESS) {
             if (Z_TYPE_PP(tmp) != IS_STRING) {
                 zend_error(E_WARNING, "cairo_win32_font_face_create() expects key 'lfFaceName' to be of type string");
             } else {
@@ -210,7 +210,7 @@ PHP_METHOD(CairoWin32FontFace, __construct)
         LFONT_FIND_LONGB(lfQuality, DEFAULT_QUALITY);
         LFONT_FIND_LONGB(lfPitchAndFamily, FIXED_PITCH | FF_DONTCARE);
 
-        if (zend_hash_find(Z_ARRVAL_P(font_options), "lfFaceName", sizeof("lfFaceName"), (void **)&tmp) == SUCCESS) {
+        if (zend_hash_find(Z_ARRVAL_P(font_options), "lfFaceName") == SUCCESS) {
             if (Z_TYPE_PP(tmp) != IS_STRING) {
                 zend_error(E_WARNING, "cairo_win32_font_face_create() expects key 'lfFaceName' to be of type string");
             } else {
