@@ -1,6 +1,4 @@
-Cairo OO Extension
+Cairo OO Extension for PHP7
 ================
 
-Object Oriented interface to Cairo Graphics library
-Requires Cairo 1.4 or higher
-Requires PHP 5.2 or higher
+Ainda causa muito Segmentation fault, não baixem esperando funcionar
