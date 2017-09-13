@@ -1,0 +1,52 @@
+--TEST--
+CairoSurfacePattern->setFilter() method
+--SKIPIF--
+<?php
+if(!extension_loaded('cairo')) die('skip - Cairo extension not available');
+?>
+--FILE--
+<?php
+$surface = new CairoImageSurface(CairoFormat::ARGB32, 50, 50);
+var_dump($surface);
+
+$pattern = new CairoSurfacePattern($surface);
+var_dump($pattern);
+
+$pattern->setFilter(CairoFilter::NEAREST);
+
+$filter = $pattern->getFilter();
+var_dump($filter);
+var_dump($filter == CairoFilter::NEAREST);
+
+/* Total number of args needed = 1 */
+try {
+    $pattern->setFilter();
+    trigger_error('setFilter with no args');
+} catch (CairoException $e) {
+    echo $e->getMessage(), PHP_EOL;
+}
+try {
+    $pattern->setFilter(1, 1);
+    trigger_error('setFilter with too many args');
+} catch (CairoException $e) {
+    echo $e->getMessage(), PHP_EOL;
+}
+
+/* arg must be int or castable to int */
+try {
+    $pattern->setFilter(array());
+    trigger_error('Arg 1 must be int');
+} catch (CairoException $e) {
+    echo $e->getMessage(), PHP_EOL;
+}
+?>
+--EXPECTF--
+object(CairoImageSurface)#%d (0) {
+}
+object(CairoSurfacePattern)#%d (0) {
+}
+int(3)
+bool(true)
+CairoSurfacePattern::setFilter() expects exactly 1 parameter, 0 given
+CairoSurfacePattern::setFilter() expects exactly 1 parameter, 2 given
+CairoSurfacePattern::setFilter() expects parameter 1 to be long, array given
