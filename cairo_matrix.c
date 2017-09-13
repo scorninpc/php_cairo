@@ -28,7 +28,7 @@
 #include "php_cairo.h"
 
 zend_class_entry *cairo_ce_cairomatrix;
-static zend_object_value cairo_matrix_object_new(zend_class_entry *ce TSRMLS_DC);
+static zend_object cairo_matrix_object_new(zend_class_entry *ce TSRMLS_DC);
 static zend_object_handlers cairo_matrix_object_handlers; 
 
 ZEND_BEGIN_ARG_INFO_EX(CairoMatrix____construct_args, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 0)
@@ -492,10 +492,10 @@ const zend_function_entry cairo_matrix_methods[] = {
 };
 /* }}} */
 
-static zend_object_value cairo_matrix_object_clone(zval *this_ptr TSRMLS_DC) 
+static zend_object cairo_matrix_object_clone(zval *this_ptr TSRMLS_DC) 
 {
 	cairo_matrix_object *new_matrix = NULL;
-	zend_object_value new_zend_object;
+	zend_object new_zend_object;
 	cairo_matrix_object *old_matrix = (cairo_matrix_object *)cairo_matrix_object_get(this_ptr TSRMLS_CC);
 	new_zend_object = cairo_matrix_object_new(old_matrix->std.ce TSRMLS_CC);
 	new_matrix = (cairo_matrix_object *)zend_object_store_get_object(this_ptr TSRMLS_CC);
@@ -519,9 +519,9 @@ static void cairo_matrix_object_destroy(void *object TSRMLS_DC)
 	efree(object);
 }
 
-static zend_object_value cairo_matrix_object_new(zend_class_entry *ce TSRMLS_DC)
+static zend_object cairo_matrix_object_new(zend_class_entry *ce TSRMLS_DC)
 {
-	zend_object_value retval;
+	zend_object retval;
 	cairo_matrix_object *matrix;
 	zval *temp;
 

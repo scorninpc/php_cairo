@@ -2972,9 +2972,9 @@ static void cairo_context_object_destroy(void *object TSRMLS_DC)
 	efree(object);
 }
 
-static zend_object_value cairo_context_object_new(zend_class_entry *ce TSRMLS_DC)
+static zend_object cairo_context_object_new(zend_class_entry *ce TSRMLS_DC)
 {
-	zend_object_value retval;
+	zend_object retval;
 	cairo_context_object *context;
 	zval *temp;
 

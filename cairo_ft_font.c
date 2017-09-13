@@ -320,9 +320,9 @@ static void cairo_ft_font_face_object_destroy(void *object TSRMLS_DC)
 
 /* {{{ cairo_ft_font_face_object_new 
  */
-zend_object_value cairo_ft_font_face_object_new(zend_class_entry *ce TSRMLS_DC)
+zend_object cairo_ft_font_face_object_new(zend_class_entry *ce TSRMLS_DC)
 {
-	zend_object_value retval;
+	zend_object retval;
 	cairo_ft_font_face_object *font_face;
 	zval *temp;
 

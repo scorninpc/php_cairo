@@ -533,7 +533,7 @@ extern zend_class_entry *cairo_ce_cairotoyfontface;
 extern zend_class_entry *cairo_ce_cairoscaledfont;
 extern zend_class_entry *cairo_ce_cairoftfontface;
 
-extern zend_object_value cairo_surface_object_new(zend_class_entry *ce TSRMLS_DC);
+extern zend_object cairo_surface_object_new(zend_class_entry *ce TSRMLS_DC);
 extern cairo_status_t php_cairo_read_func(void *closure, const unsigned char *data, unsigned int length);
 extern cairo_status_t php_cairo_write_func(void *closure, const unsigned char *data, unsigned int length);
 #if defined(CAIRO_HAS_FT_FONT) && defined(HAVE_FREETYPE)
@@ -541,7 +541,7 @@ static unsigned long php_cairo_ft_read_func(FT_Stream stream, unsigned long offs
 extern void php_cairo_ft_close_stream(FT_Stream stream);
 #endif
 
-extern zend_object_value cairo_font_face_object_new(zend_class_entry *ce TSRMLS_DC);
+extern zend_object cairo_font_face_object_new(zend_class_entry *ce TSRMLS_DC);
 
 /* Exported functions for PHP Cairo API */
 PHP_CAIRO_API extern void php_cairo_throw_exception(cairo_status_t status TSRMLS_DC);

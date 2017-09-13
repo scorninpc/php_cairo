@@ -597,9 +597,9 @@ void cairo_surface_object_destroy(void *object TSRMLS_DC)
 }
 
 /* NOTE: cannot be static - used by cairo_*_surface.c files */
-zend_object_value cairo_surface_object_new(zend_class_entry *ce TSRMLS_DC)
+zend_object cairo_surface_object_new(zend_class_entry *ce TSRMLS_DC)
 {
-	zend_object_value retval;
+	zend_object retval;
 	cairo_surface_object *surface;
 	zval *temp;
 

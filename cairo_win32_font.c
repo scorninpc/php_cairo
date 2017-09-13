@@ -271,9 +271,9 @@ static void cairo_win32_font_face_object_destroy(void *object TSRMLS_DC)
 /**
  * Called by init_object_ex() to create the new object.
  */
-zend_object_value cairo_win32_font_face_create_new(zend_class_entry *ce TSRMLS_DC)
+zend_object cairo_win32_font_face_create_new(zend_class_entry *ce TSRMLS_DC)
 {
-    zend_object_value retval;
+    zend_object retval;
     cairo_win32_font_face_object *font_face;
     zval *temp;
 
@@ -301,9 +301,9 @@ zend_object_value cairo_win32_font_face_create_new(zend_class_entry *ce TSRMLS_D
     return retval;
 }
 
-zend_object_value cairo_win32_font_face_clone(zval * old_zval TSRMLS_DC)
+zend_object cairo_win32_font_face_clone(zval * old_zval TSRMLS_DC)
 {
-	zend_object_value new_val;
+	zend_object new_val;
 	cairo_win32_font_face_object *new_font,
 								 *old_font;
 	old_font = zend_object_store_get_object(old_zval TSRMLS_CC);
